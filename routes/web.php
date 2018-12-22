@@ -14,7 +14,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-Route::get('/', 'IndexController@welcome');
+Route::get('/', 'IndexController@index');
 
-Route::match(['get', 'post'], '/botman', 'BotManController@handle');
-Route::get('/botman/tinker', 'BotManController@tinker');
+//Route::match(['get', 'post'], '/botman', 'BotManController@handle');
+//Route::get('/botman/tinker', 'BotManController@tinker');
