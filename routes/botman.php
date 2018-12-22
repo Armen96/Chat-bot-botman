@@ -2,9 +2,6 @@
 use App\Http\Controllers\BotManController;
 use App\Http\Controllers\OnboardingConversation;
 use App\Http\Controllers\SubscribeConversation;
-use BotMan\BotMan\Messages\Attachments\File;
-use App\Mail\SendMessage;
-
 
 $botman = resolve('botman');
 
@@ -21,12 +18,10 @@ $botman->hears('Call me {name}', function ($bot,$name) {
     $bot->reply('Hello'. $name .'How are you?!');
 });
 
-
 $botman->hears('.*Hello.*', function ($bot) {
     $bot->reply('Nice to meet you!');
     $bot->startConversation(new OnboardingConversation);
 });
-
 
 $botman->receivesFiles(function($bot, $files) {
     foreach ($files as $file) {
@@ -45,8 +40,5 @@ $botman->receivesImages(function($bot, $images) {
         $bot->reply("Thanks to you for your Image");
     }
 });
-
-
-
 
 $botman->hears('Start conversation', BotManController::class.'@startConversation');
