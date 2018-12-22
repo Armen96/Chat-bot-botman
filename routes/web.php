@@ -11,6 +11,9 @@
 |
 */
 
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+
 Route::get('/', 'BotManController@welcome');
 
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
