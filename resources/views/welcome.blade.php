@@ -54,7 +54,7 @@
 <div class="container">
     <div class="content">
         <div class="links">
-            {{--<a href="{{ url('/botman/tinker') }}">Start communication</a>--}}
+            <a href="{{ url('/botman/tinker') }}">Start communication</a>
         </div>
     </div>
 </div>

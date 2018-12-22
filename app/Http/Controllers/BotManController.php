@@ -4,8 +4,6 @@
 
 namespace App\Http\Controllers;
 
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
 
 use BotMan\BotMan\BotMan;
 use Illuminate\Http\Request;
@@ -20,9 +18,6 @@ class BotManController extends Controller
      */
     public function handle()
     {
-        error_reporting(E_ALL);
-        ini_set('display_errors', 'On');
-
         $botman = app('botman');
 
         $botman->listen();
