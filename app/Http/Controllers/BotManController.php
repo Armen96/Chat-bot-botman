@@ -1,15 +1,10 @@
 <?php
 
-
-
 namespace App\Http\Controllers;
 
-
 use BotMan\BotMan\BotMan;
-use Illuminate\Http\Request;
 use App\Conversations\ExampleConversation;
-use BotMan\BotMan\BotManFactory;
-use BotMan\BotMan\Drivers\DriverManager;
+
 
 class BotManController extends Controller
 {
