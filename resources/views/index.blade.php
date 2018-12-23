@@ -46,7 +46,7 @@
                 <p class="text-white-50">Put a legal chatbot to work on your law firm's website that can answer questions about your firm, takes enquiries, and books in meetings for you - helping convert more website visitors into clients 24/7.</p>
             </div>
         </div>
-        <img src="{{ asset('template/img/ai.jpg') }}" class="img-fluid" alt="">
+        <img src="{{ secure_asset('template/img/ai.jpg') }}" class="img-fluid" alt="">
     </div>
 </section>
 
@@ -57,7 +57,7 @@
         <!-- Featured Project Row -->
         <div class="row align-items-center no-gutters mb-4 mb-lg-5">
             <div class="col-xl-8 col-lg-7">
-                <img class="img-fluid mb-3 mb-lg-0" src="{{ asset('template/img/question.jpeg') }}" alt="">
+                <img class="img-fluid mb-3 mb-lg-0" src="{{ secure_asset('template/img/question.jpeg') }}" alt="">
             </div>
             <div class="col-xl-4 col-lg-5">
                 <div class="featured-text text-center text-lg-left">
@@ -70,7 +70,7 @@
         <!-- Project Two Row -->
         <div class="row justify-content-center no-gutters">
             <div class="col-lg-6">
-                <img class="img-fluid" src="{{ asset('template/img/email2.png') }}" alt="">
+                <img class="img-fluid" src="{{ secure_asset('template/img/email2.png') }}" alt="">
             </div>
             <div class="col-lg-6 order-lg-first">
                 <div class="bg-black text-center h-100 project">
@@ -168,16 +168,16 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="{{ asset('template/vendor/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('template/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ secure_asset('template/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ secure_asset('template/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 <!-- Plugin JavaScript -->
-<script src="{{ asset('template/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+<script src="{{ secure_asset('template/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
 <!-- Custom scripts for this template -->
-<script src="{{ asset('template/js/grayscale.min.js') }}"></script>
+<script src="{{ secure_asset('template/js/grayscale.min.js') }}"></script>
 
-<script src="{{ asset('template/js/grayscale.min.js') }}"></script>
+<script src="{{ secure_asset('template/js/grayscale.min.js') }}"></script>
 
 </body>
 

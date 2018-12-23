@@ -95,18 +95,18 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="{{ asset('template/vendor/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('template/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ secure_asset('template/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ secure_asset('template/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 <!-- Plugin JavaScript -->
-<script src="{{ asset('template/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+<script src="{{ secure_asset('template/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
 <!-- Custom scripts for this template -->
-<script src="{{ asset('template/js/grayscale.min.js') }}"></script>
+<script src="{{ secure_asset('template/js/grayscale.min.js') }}"></script>
 
-<script src="{{ asset('template/js/grayscale.min.js') }}"></script>
+<script src="{{ secure_asset('template/js/grayscale.min.js') }}"></script>
 
-<script src="{{ asset('/js/app.js') }}"></script>
+<script src="{{ secure_asset('/js/app.js') }}"></script>
 
 {{--<script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>--}}
 
