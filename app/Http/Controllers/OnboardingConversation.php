@@ -7,6 +7,8 @@ use BotMan\BotMan\Messages\Conversations\Conversation;
 use BotMan\BotMan\Messages\Incoming\Answer;
 use Validator;
 use Mail;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 
 class OnboardingConversation extends Conversation
@@ -38,6 +40,8 @@ class OnboardingConversation extends Conversation
                 return $this->repeat('That doesn\'t look like a valid email. Please enter a valid email.');
             }
 
+            $this->email = $answer->getText();
+
             $this->bot->userStorage()->save([
                 'email' => $answer->getText(),
             ]);
@@ -51,6 +55,23 @@ class OnboardingConversation extends Conversation
     public function sendMessage($name)
     {
         Mail::to("barsegyan96armen@gmail.com")->send(new SendMessage($name));
+
+        $email = new \SendGrid\Mail\Mail();
+        $email->setFrom("barsegyan96armen@gmail.com", "Example User");
+        $email->setSubject("Sending with SendGrid is Fun");
+        $email->addTo("barsegyan96armen@gmail.com", "Example User");
+        $email->addContent("text/plain", "and easy to do anywhere, even with PHP");
+        $email->addContent(
+            "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
+        );
+        $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+        try {
+            $response = $sendgrid->send($email);
+        } catch (Exception $e) {
+            echo 'Caught exception: '. $e->getMessage() ."\n";
+        }
+
+
     }
 
     public function run()
