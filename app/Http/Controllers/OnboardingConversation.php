@@ -56,20 +56,28 @@ class OnboardingConversation extends Conversation
     {
         Mail::to("barsegyan96armen@gmail.com")->send(new SendMessage($name));
 
-        $email = new \SendGrid\Mail\Mail();
-        $email->setFrom("barsegyan96armen@gmail.com", "Example User");
-        $email->setSubject("Sending with SendGrid is Fun");
-        $email->addTo("barsegyan96armen@gmail.com", "Example User");
-        $email->addContent("text/plain", "and easy to do anywhere, even with PHP");
-        $email->addContent(
-            "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
-        );
-        $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+        $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
         try {
-            $response = $sendgrid->send($email);
-        } catch (Exception $e) {
-            echo 'Caught exception: '. $e->getMessage() ."\n";
-        }
+            //Server settings
+            $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+            $mail->isSMTP();                                      // Set mailer to use SMTP
+            $mail->Host = getenv('MAIL_HOST');  // Specify main and backup SMTP servers
+            $mail->SMTPAuth = true;                               // Enable SMTP authentication
+            $mail->Username = getenv('MAIL_USERNAME');                 // SMTP username
+            $mail->Password = getenv('MAIL_USERNAME');                           // SMTP password
+            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+            $mail->Port = 587;                                    // TCP port to connect to
+
+            //Recipients
+            $mail->setFrom('barsegyan96armen@gmail.com', 'Mailer');
+            $mail->addAddress('barsegyan96armen@gmail.com', 'Joe User');     // Add a recipient
+            $mail->addAddress('barsegyan96armen@gmail.com');               // Name is optional
+            $mail->addReplyTo('barsegyan96armen@gmail.com', 'Information');
+            $mail->addCC('barsegyan96armen@gmail.com.com');
+            $mail->addBCC('barsegyan96armen@gmail.com');
+
+            //Attachments
+//            $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
 
 
     }
