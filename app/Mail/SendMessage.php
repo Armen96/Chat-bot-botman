@@ -32,10 +32,23 @@ class SendMessage extends Mailable
      */
     public function build()
     {
-        return $this->from('example@example.com')
-            ->view('emails.index') ->with([
-                'name' => $this->name,
-                'url' => $this->url
-            ]);
+//        return $this->from('example@example.com')
+//            ->view('emails.index') ->with([
+//                'name' => $this->name,
+//                'url' => $this->url
+//            ]);
+
+        $address = 'janeexampexample@example.com';
+        $subject = 'This is a demo!';
+        $name = 'Jane Doe';
+
+        return $this->view('emails.index')
+            ->from($address, $name)
+            ->cc($address, $name)
+            ->bcc($address, $name)
+            ->replyTo($address, $name)
+            ->subject($subject)
+            ->with([ 'name' => $this->name,
+                'url' => $this->url ]);
     }
 }
