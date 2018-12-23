@@ -32,7 +32,7 @@
         <div class="mx-auto text-center">
             <h1 class="mx-auto my-0 text-uppercase">Botman</h1>
             <h2 class="text-white-50 mx-auto mt-2 mb-5">Meet your automated legal receptionist.</h2>
-            <a href="{{ url('/botman/tinker') }}" class="btn btn-primary js-scroll-trigger">Get Started</a>
+            <a href="{{ secure_url('/botman/tinker') }}" class="btn btn-primary js-scroll-trigger">Get Started With Tinker</a>
         </div>
     </div>
 </header>
