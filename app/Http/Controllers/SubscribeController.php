@@ -7,7 +7,7 @@ use BotMan\BotMan\Messages\Outgoing\Question;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\BotMan\Messages\Conversations\Conversation;
 
-class SubscribeConversation extends Conversation
+class SubscribeController extends Conversation
 {
 
     public function welcome()

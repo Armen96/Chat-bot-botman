@@ -6,8 +6,7 @@ use App\Mail\SendMessage;
 use BotMan\BotMan\Messages\Conversations\Conversation;
 use BotMan\BotMan\Messages\Incoming\Answer;
 use Validator;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
+use Mail;
 
 
 class OnboardingConversation extends Conversation
@@ -44,12 +43,14 @@ class OnboardingConversation extends Conversation
             ]);
 
             $this->say('Great - that is all we need, '.$this->firstname);
+
+            $this->sendMessage($this->firstname);
         });
     }
 
-    public function sendMessage()
+    public function sendMessage($name)
     {
-        Mail::to("test@gmail.com")->send(new SendMessage());
+        Mail::to("barsegyan96armen@gmail.com")->send(new SendMessage($name));
     }
 
     public function run()

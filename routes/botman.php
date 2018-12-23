@@ -1,7 +1,7 @@
 <?php
 use App\Http\Controllers\BotManController;
 use App\Http\Controllers\OnboardingConversation;
-use App\Http\Controllers\SubscribeConversation;
+use App\Http\Controllers\SubscribeController;
 
 $botman = resolve('botman');
 
@@ -9,9 +9,9 @@ $botman->hears('Hi', function ($bot) {
     $bot->reply('Hello!');
 });
 
-$botman->hears('Get_started', function ($bot) {
+$botman->hears('Facebook subscribe', function ($bot) {
     $bot->reply('Thanks!');
-    $bot->startConversation(new SubscribeConversation);
+    $bot->startConversation(new SubscribeController);
 });
 
 $botman->hears('Call me {name}', function ($bot,$name) {
