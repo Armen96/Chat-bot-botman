@@ -10,6 +10,8 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="shortcut icon" href="{{ secure_asset('favicon.ico') }}">
+
     <title>Botman</title>
 
     <!-- Bootstrap core CSS -->
