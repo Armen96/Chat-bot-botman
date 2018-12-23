@@ -7,9 +7,6 @@ use BotMan\BotMan\Messages\Conversations\Conversation;
 use BotMan\BotMan\Messages\Incoming\Answer;
 use Validator;
 use Mail;
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use App\Mail\TestEmail;
 
 class OnboardingConversation extends Conversation
 {
