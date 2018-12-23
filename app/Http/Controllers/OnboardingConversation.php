@@ -52,7 +52,20 @@ class OnboardingConversation extends Conversation
     public function sendMessage($name)
     {
 
-        Mail::to("barsegyan96armen@gmail.com")->send(new SendMessage($name));
+//        Mail::to("barsegyan96armen@gmail.com")->send(new SendMessage($name));
+
+        $email = new \SendGrid\Mail\Mail();
+        $email->setFrom("test@example.com", "Example User");
+        $email->setSubject("Sending with SendGrid is Fun");
+        $email->addTo("test@example.com", "Example User");
+        $email->addContent("text/plain", "and easy to do anywhere, even with PHP");
+        $email->addContent(
+            "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
+        );
+        $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+
+        $sendgrid->send($email);
+
     }
 
     public function run()
