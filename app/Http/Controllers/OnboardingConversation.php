@@ -8,6 +8,8 @@ use BotMan\BotMan\Messages\Incoming\Answer;
 use Validator;
 use Mail;
 
+//6d15a328f87199b3f5fd015f0e26b356ecc863cfc2d44e09d84d5d64524b9291
+
 class OnboardingConversation extends Conversation
 {
     protected $firstname;
@@ -51,21 +53,7 @@ class OnboardingConversation extends Conversation
 
     public function sendMessage($name)
     {
-
-//        Mail::to("barsegyan96armen@gmail.com")->send(new SendMessage($name));
-
-        $email = new \SendGrid\Mail\Mail();
-        $email->setFrom("barsegyan96armen@gmail.com", "Example User");
-        $email->setSubject("Sending with SendGrid is Fun");
-        $email->addTo("armeen1996@mail.ru", "Example User");
-        $email->addContent("text/plain", "and easy to do anywhere, even with PHP");
-        $email->addContent(
-            "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
-        );
-        $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
-
-        $sendgrid->send($email);
-
+        Mail::to("barsegyan96armen@gmail.com")->send(new SendMessage($name));
     }
 
     public function run()
